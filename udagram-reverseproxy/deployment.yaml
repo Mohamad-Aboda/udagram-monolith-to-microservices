@@ -1,24 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels:
+    service: reverseproxy
   name: reverseproxy
 spec:
+  replicas: 1
   selector:
     matchLabels:
-      run: reverseproxy
-  replicas: 1
+      service: reverseproxy
   template:
     metadata:
       labels:
-        run: reverseproxy
+        service: reverseproxy
     spec:
       containers:
-        - name: reverseproxy
-          image: abodaa/reverseproxy:v1
-          ports:
-            - containerPort: 80
-          resources:
-            limits:
-              cpu: 1000m
-            requests:
-              cpu: 500m
+      - image: fego/reverseproxy
+        name: reverseproxy
+        imagePullPolicy: Always          
+        ports:
+        - containerPort: 8080
+      restartPolicy: Always
