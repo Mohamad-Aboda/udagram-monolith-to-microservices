@@ -15,9 +15,9 @@ spec:
         service: reverseproxy
     spec:
       containers:
-      - image: abodaa/reverseproxy:v1
-        name: reverseproxy
-        imagePullPolicy: Always          
-        ports:
-        - containerPort: 8080
+        - image: abodaa/reverseproxy
+          name: reverseproxy
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
       restartPolicy: Always
