@@ -9,4 +9,4 @@ data:
   AWS_REGION: us-east-1
   AWS_PROFILE: default
   JWT_SECRET: testing
-  URL: a6a61b07a168b41c0b008b856fbd36ec-1006764107.us-east-1.elb.amazonaws.com # revervse proxy url
+  URL: a6a61b07a168b41c0b008b856fbd36ec-1006764107.us-east-1.elb.amazonaws.com
