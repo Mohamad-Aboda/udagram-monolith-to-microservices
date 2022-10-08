@@ -9,4 +9,4 @@ data:
   AWS_REGION: us-east-1
   AWS_PROFILE: default
   JWT_SECRET: testing
-  URL: http://localhost:8080/api/v0
+  URL: http://localhost:8080/api/v0 # revervse proxy url

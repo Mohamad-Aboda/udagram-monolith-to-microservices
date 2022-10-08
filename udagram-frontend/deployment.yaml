@@ -16,10 +16,9 @@ spec:
         api: external
     spec:
       containers:
-      - name: frontend
-        image: abodaa/udagram-frontend:v2
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 80
+        - name: frontend
+          image: abodaa/udagram-frontend:v1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
       restartPolicy: Always
-      
