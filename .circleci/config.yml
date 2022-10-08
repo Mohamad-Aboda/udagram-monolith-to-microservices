@@ -14,8 +14,8 @@ jobs:
       - run:
           name: docker login
           command: |
-              echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-      
+            echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
       - run:
           name: Build Docker images
           command: |
@@ -27,20 +27,19 @@ jobs:
             docker tag udagram-api-user abodaa/udagram-api-user:v1
 
             docker build -t udagram-frontend ./udagram-frontend
-            docker tag udagram-frontend abodaa/udagram-frontend:v1
+            docker tag udagram-frontend abodaa/udagram-frontend:v2
 
             docker build -t reverseproxy ./udagram-reverseproxy
             docker tag reverseproxy abodaa/reverseproxy:v1
-      
+
       - run:
           name: Push Docker Images
           command: |
             echo "PUSHING IMAGES..."
             docker push abodaa/udagram-api-feed:v1
             docker push abodaa/udagram-api-user:v1
-            docker push abodaa/udagram-frontend:v1
+            docker push abodaa/udagram-frontend:v2
             docker push abodaa/reverseproxy:v1
-
 
 workflows:
   default:
